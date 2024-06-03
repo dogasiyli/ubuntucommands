@@ -1,11 +1,15 @@
 # Give execute permission to the setup script
 
-chmod +x setup.sh
+chmod +x DGRUN.sh
 
-# Run the setup script with the desired command
+## Run the setup script with the desired command
 
-./setup.sh nvm_install
+./DGRUN.sh bash_add
 
-./setup.sh node_update
+./DGRUN.sh nvm_install
 
-./setup.sh ubuntu_update
+./DGRUN.sh node_update
+
+./DGRUN.sh ubuntu_update
+
+./DGRUN.sh expo_doctor

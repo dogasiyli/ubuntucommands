@@ -12,6 +12,14 @@ def run_command(command, info_only):
             print(f"Command '{command}' failed with error: {e}")
             sys.exit(1)
 
+def bash_add(info_only):
+    commands = [
+        "echo 'export PATH=$PATH:~/GitHubUbuntU/ubuntucommands' >> ~/.bashrc",
+        "source ~/.bashrc"
+    ]
+    for command in commands:
+        run_command(command, info_only)
+
 def nvm_install(info_only):
     commands = [
         "sudo apt update",
@@ -40,6 +48,13 @@ def ubuntu_update(info_only):
     for command in commands:
         run_command(command, info_only)
 
+def expo_doctor(info_only):
+    commands = [
+        "npx expo-doctor@latest"
+    ]
+    for command in commands:
+        run_command(command, info_only)
+
 def main():
     if len(sys.argv) < 2:
         print("Usage: python run_commands.py <command> [--info|-i]")
@@ -53,7 +68,11 @@ def main():
     elif command == "node_update":
         node_update(info_only)
     elif command == "ubuntu_update":
-        ubuntu_update(info_only)        
+        ubuntu_update(info_only)     
+    elif command == "expo_doctor":
+        expo_doctor(info_only)   
+    elif command == "bash_add":
+        bash_add(info_only)
     else:
         print(f"Unknown command: {command}")
         sys.exit(1)
