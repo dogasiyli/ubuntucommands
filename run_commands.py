@@ -32,6 +32,14 @@ def node_update(info_only):
     for command in commands:
         run_command(command, info_only)
 
+def ubuntu_update(info_only):
+    commands = [
+        "sudo apt-get update",
+        "sudo apt-get upgrade"
+    ]
+    for command in commands:
+        run_command(command, info_only)
+
 def main():
     if len(sys.argv) < 2:
         print("Usage: python run_commands.py <command> [--info|-i]")
@@ -44,6 +52,8 @@ def main():
         nvm_install(info_only)
     elif command == "node_update":
         node_update(info_only)
+    elif command == "ubuntu_update":
+        ubuntu_update(info_only)        
     else:
         print(f"Unknown command: {command}")
         sys.exit(1)

@@ -6,3 +6,4 @@ chmod +x setup.sh
 
 ./setup.sh nvm_install
 ./setup.sh node_update
+./setup.sh ubuntu_update
