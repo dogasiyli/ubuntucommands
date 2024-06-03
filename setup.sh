@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 # Define the repository URL
 REPO_URL="git@github.com:dogasiyli/ubuntucommands.git"
